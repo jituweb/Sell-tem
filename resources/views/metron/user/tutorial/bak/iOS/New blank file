@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>安装及使用常见问题 &mdash; {$config["appName"]}</title>
+    <link href="{$metron['assets_url']}/css/client/metron-icon.css" rel="stylesheet" type="text/css" />
+    {include file='include/global/head.tpl'}
+
+    <style>
+        /* ✅ 标题样式 */
+        .faq-section-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #2f80ed;
+            border-left: 6px solid #2f80ed;
+            padding-left: 10px;
+            margin-bottom: 25px;
+        }
+
+        /* ✅ FAQ 卡片样式 */
+        .faq-card {
+            background: #fff;
+            border-radius: 14px;
+            box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+            margin-bottom: 25px;
+        }
+        .faq-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 22px rgba(0,0,0,0.12);
+        }
+
+        /* ✅ 问题标题 */
+        .faq-question {
+            cursor: pointer;
+            font-weight: 600;
+            color: #2f80ed;
+            padding: 18px 22px;
+            font-size: 17px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .faq-answer {
+            display: none;
+            padding: 15px 25px 25px 25px;
+            border-top: 1px solid #eee;
+            color: #333;
+            font-size: 15px;
+            line-height: 1.8;
+            background-color: #fafbfc;
+        }
+
+        .faq-question:hover {
+            background: rgba(47,128,237,0.05);
+        }
+
+        /* ✅ 展开图标旋转 */
+        .faq-icon {
+            transition: transform 0.3s ease;
+        }
+        .faq-card.active .faq-icon {
+            transform: rotate(180deg);
+        }
+        .faq-card.active .faq-answer {
+            display: block;
+            animation: fadeIn 0.4s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-5px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* ✅ 返回顶部按钮 */
+        #backToTop {
+            position: fixed;
+            bottom: 40px;
+            right: 30px;
+            display: none;
+            background: #2f80ed;
+            color: #fff;
+            border: none;
+            padding: 10px 14px;
+            border-radius: 50%;
+            font-size: 20px;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+            z-index: 999;
+        }
+        #backToTop:hover {
+            background: #1c5dd6;
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+
+<body>
+<div class="d-flex flex-column flex-root">
+    <div class="d-flex flex-row flex-column-fluid page">
+        <div class="d-flex flex-column flex-row-fluid wrapper" id="kt_wrapper">
+            {include file='include/global/menu.tpl'}
+
+            <div class="content d-flex flex-column flex-column-fluid" id="kt_content">
+                <div class="subheader min-h-lg-175px pt-5 pb-7 subheader-transparent" id="kt_subheader">
+                    <div class="container d-flex align-items-center justify-content-between flex-wrap flex-sm-nowrap">
+                        <div class="d-flex align-items-center flex-wrap mr-2">
+                            <div class="d-flex flex-column">
+                                <h2 class="text-white font-weight-bold my-2 mr-5">安装及使用常见问题（FAQ）</h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="d-flex flex-column-fluid">
+                    <div class="container">
+
+                        <p class="faq-section-title">💡 常见问题汇总</p>
+
+                        <!-- FAQ 1 -->
+                        <div class="faq-card">
+                            <div class="faq-question">
+                                <span>1. 安卓手机提示“安装已被阻止”怎么办？</span>
+                                <i class="faq-icon fas fa-chevron-down"></i>
+                            </div>
+                            <div class="faq-answer">
+                                请前往手机设置，允许安装未知来源的应用。不同品牌位置略有差异，一般在 “设置” → “安全” 或 “应用管理” 中。<br><br>
+                                小米手机  hyperos3(澎湃3)
+                              增加了应用安装检测 病毒检测在安装部分应用比如 clashmeta for android 时会出现无法安装的情况
+                               请在  设置 搜索 病毒  逐个关闭全部检测  即可安装 
+                            </div>
+                        </div>
+
+                        <!-- FAQ 2 -->
+                        <div class="faq-card">
+                            <div class="faq-question">
+                                <span>2.  iOS 无法直接安装客户端？</span>
+                                <i class="faq-icon fas fa-chevron-down"></i>
+                            </div>
+                            <div class="faq-answer">
+                                由于 Apple 限制，iOS 暂无法直接安装客户端，请前往使用教程页面查看详细安装方法。
+                            </div>
+                        </div>
+
+                        <!-- FAQ 3 -->
+                        <div class="faq-card">
+                            <div class="faq-question">
+                                <span>3. 使用edge浏览下载提示不安全无法安装？</span>
+                                <i class="faq-icon fas fa-chevron-down"></i>
+                            </div>
+                            <div class="faq-answer">
+                                这是因为我们未在微软申请数字签名，点最右边的三个点，点保留----点显示详细信息----点仍要保留，即可完成下载,请放心文件安全无毒。
+                            </div>
+                        </div>
+
+                        <!-- FAQ 4 -->
+                        <div class="faq-card">
+                            <div class="faq-question">
+                                <span>4. Windows 提示“未知发布者”或“已阻止运行”？</span>
+                                <i class="faq-icon fas fa-chevron-down"></i>
+                            </div>
+                            <div class="faq-answer">
+                                这是因为我们未在微软申请数字签名，可点击“更多信息”→“仍要运行”继续安装。请放心，文件安全无毒。
+                            </div>
+                        </div>
+
+                        <!-- FAQ 5 -->
+                        <div class="faq-card">
+                            <div class="faq-question">
+                                <span>5. MacOS 如提示文件损坏或者“无法打开极兔”,因为无法验证开发者？</span>
+                                <i class="faq-icon fas fa-chevron-down"></i>
+                            </div>
+                            <div class="faq-answer">
+                                请前往“系统偏好设置”→“安全性与隐私”→“通用”，点击“仍要打开”或“允许”。
+                            </div>
+                        </div>
+
+                        <!-- FAQ 6 -->
+                        <div class="faq-card">
+                            <div class="faq-question">
+                                <span>6. 注册的新用户赠送流量可以用在免费节点吗？</span>
+                                <i class="faq-icon fas fa-chevron-down"></i>
+                            </div>
+                            <div class="faq-answer">
+                                可以，新注册用户赠送的流量以及签到所得流量均可在免费节点使用。<br>
+                                但免费节点不保证在线率，我们会尽量修复。
+                            </div>
+                        </div>
+
+                        <!-- FAQ 7 -->
+                        <div class="faq-card">
+                            <div class="faq-question">
+                                <span>7. 客户端更新或重装后，订阅会丢失吗？</span>
+                                <i class="faq-icon fas fa-chevron-down"></i>
+                            </div>
+                            <div class="faq-answer">
+                                一般情况下会丢失，需要重新导入订阅。<br>
+                                建议在更新或重装前备份好订阅地址。<br>
+                                登录用户中心 → 复制订阅 → 保存到备忘录或云端。
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            {include file='include/global/footer.tpl'}
+        </div>
+    </div>
+</div>
+
+{include file='include/global/scripts.tpl'}
+
+<!-- ✅ FAQ 展开脚本 -->
+<script>
+document.querySelectorAll('.faq-question').forEach(q => {
+    q.addEventListener('click', () => {
+        const card = q.parentElement;
+        card.classList.toggle('active');
+    });
+});
+</script>
+
+<!-- ✅ 返回顶部按钮 -->
+<button id="backToTop" title="返回顶部">↑</button>
+<script>
+window.onscroll = function() {
+  document.getElementById("backToTop").style.display = window.scrollY > 400 ? "block" : "none";
+};
+document.getElementById("backToTop").onclick = function() {
+  window.scrollTo({ top: 0, behavior: "smooth" });
+};
+</script>
+</body>
+</html>
